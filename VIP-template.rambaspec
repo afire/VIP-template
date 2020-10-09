@@ -13,6 +13,7 @@ code_files:
 - {name: Interactor.swift, path: Code/interactor.swift.liquid}
 - {name: Presenter.swift, path: Code/presenter.swift.liquid}
 - {name: ViewController.swift, path: Code/viewcontroller.swift.liquid}
+- {name: ViewController.xib, path: Code/viewcontroller.xib.liquid}
 
 test_files:
 

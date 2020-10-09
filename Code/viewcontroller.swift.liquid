@@ -8,7 +8,7 @@ protocol {{ module_info.name }}DisplayLogic: UIViewController {
 
 final class {{ module_info.name }}ViewController: UIViewController, ViewStatable {
     let interactor: {{ module_info.name }}BusinessLogic
-    var state: {{ module_info.name }}.ViewControllerState
+    var state: {{ module_info.name }}DataFlow.ViewControllerState
     let router: {{ module_info.name }}RoutingLogic & {{ module_info.name }}DataPassing
 
     init(interactor: {{ module_info.name }}BusinessLogic, router: {{ module_info.name }}RoutingLogic & {{ module_info.name }}DataPassing, state:{{ module_info.name }}DataFlow.ViewControllerState = .loading) {
@@ -31,7 +31,7 @@ extension {{ module_info.name }}ViewController: {{ module_info.name }}DisplayLog
         render(state: viewModel.state)
     }
 
-    func render(state: {{ module_info.name }}.ViewControllerState) {
+    func render(state: {{ module_info.name }}DataFlow.ViewControllerState) {
         self.state = state
         switch state {
         case .loading:
@@ -40,6 +40,8 @@ extension {{ module_info.name }}ViewController: {{ module_info.name }}DisplayLog
             print("error: \(message)")
         case .result(let modelView):
             print("result: \(modelView)")
+        case .empty:
+            print("empty")
         }
     }
 }
