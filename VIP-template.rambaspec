@@ -2,7 +2,7 @@
 name: "VIP-template"
 summary: "Generamba Templates for VIP"
 author: "Max Lebedev"
-version: "0.1.0"
+version: "0.1.1"
 license: "MIT"
 
 code_files:
