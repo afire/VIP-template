@@ -1,0 +1,16 @@
+{% include 'header' %}
+
+import UIKit
+
+protocol {{ module_info.name }}PresentationLogic {
+    func presentSomething(response: {{ module_info.name }}DataFlow.Something.Response)
+}
+
+final class {{ module_info.name }}Presenter: {{ module_info.name }}PresentationLogic {
+    weak var viewController: {{ module_info.name }}DisplayLogic?
+
+    func presentSomething(response: {{ module_info.name }}DataFlow.Something.Response) {
+        let viewModel = {{ module_info.name }}DataFlow.Something.ViewModel(state: .loading)
+        viewController?.displaySomething(viewModel: viewModel)
+    }
+}

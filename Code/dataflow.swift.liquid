@@ -1,0 +1,20 @@
+{% include 'header' %}
+
+import Foundation
+
+enum {{ module_info.name }}DataFlow {
+    enum Something {
+        struct Request {}
+        struct Response {}
+        struct ViewModel {
+            let state: ViewControllerState
+        }
+    }
+
+    enum ViewControllerState {
+        case loading
+        case result([Any])
+        case empty
+        case error(message: String)
+    }
+}

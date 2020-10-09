@@ -1,0 +1,26 @@
+{% include 'header' %}
+
+import Foundation
+
+protocol {{ module_info.name }}BusinessLogic {
+    func doSomething(request: {{ module_info.name }}DataFlow.Something.Request)
+}
+
+protocol {{ module_info.name }}DataStore {
+    var title: String? { get set }
+}
+
+final class {{ module_info.name }}Interactor: {{ module_info.name }}DataStore {
+    var presenter: {{ module_info.name }}PresentationLogic
+    var title: String?
+
+    init(presenter: {{ module_info.name }}PresentationLogic) {
+        self.presenter = presenter
+    }
+}
+
+extension {{ module_info.name }}Interactor: {{ module_info.name }}BusinessLogic {
+    func doSomething(request: {{ module_info.name }}DataFlow.Something.Request) {
+        presenter.presentSomething(response: .init())
+    }
+}

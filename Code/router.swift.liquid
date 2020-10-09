@@ -1,0 +1,22 @@
+{% include 'header' %}
+
+import Foundation
+
+protocol {{ module_info.name }}RoutingLogic {
+    func dismiss()
+}
+
+protocol {{ module_info.name }}DataPassing {
+    var dataStore: {{ module_info.name }}DataStore? { get }
+}
+
+final class {{ module_info.name }}Router: {{ module_info.name }}RoutingLogic & {{ module_info.name }}DataPassing {
+    weak var viewController: {{ module_info.name }}DisplayLogic?
+    var dataStore: {{ module_info.name }}DataStore?
+}
+
+extension {{ module_info.name }}Router {
+    func dismiss() {
+        viewController?.dismiss(animated: true)
+    }
+}
