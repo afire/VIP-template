@@ -1,0 +1,19 @@
+# Template information section
+name: "VIP-template"
+summary: "Generamba Templates for VIP"
+author: "Max Lebedev"
+version: "0.1.0"
+license: "MIT"
+
+code_files:
+
+- {name: Configurator.swift, path: Code/configurator.swift.liquid}
+- {name: Router.swift, path: Code/router.swift.liquid}
+- {name: DataFlow.swift, path: Code/dataflow.swift.liquid}
+- {name: Interactor.swift, path: Code/interactor.swift.liquid}
+- {name: Presenter.swift, path: Code/presenter.swift.liquid}
+- {name: ViewController.swift, path: Code/viewcontroller.swift.liquid}
+
+test_files:
+
+dependencies:
